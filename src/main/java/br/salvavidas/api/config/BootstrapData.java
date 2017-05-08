@@ -237,7 +237,7 @@ public class BootstrapData {
 	public static void main(String[] args) throws Exception {
 		
 		
-		File dir = new File("E:\\git\\SalvaVidas\\app\\src\\main\\res\\drawable\\originais");
+		File dir = new File("E:\\temp\\avatar\\originais");
 		for (File arq : dir.listFiles()){
 			if (arq.getName().startsWith("f")){
 				redimensionar(arq);
@@ -256,7 +256,7 @@ public class BootstrapData {
 		BufferedImage new_img = new BufferedImage(new_w, new_h, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = new_img.createGraphics();
 		g.drawImage(imagem, 0, 0, new_w, new_h, null);
-		ImageIO.write(new_img, "JPG", new File("E:\\git\\SalvaVidas\\app\\src\\main\\res\\drawable\\red\\"+arquivo.getName()));
+		ImageIO.write(new_img, "JPG", new File("E:\\temp\\avatar\\red\\"+arquivo.getName()));
 	}
 
 }

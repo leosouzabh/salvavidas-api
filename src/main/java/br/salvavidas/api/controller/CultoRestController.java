@@ -34,7 +34,7 @@ public class CultoRestController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	public ResponseEntity<Iterable<Salvavidas>> save(@RequestBody List<CultoResource> cultos) {
+	public ResponseEntity<Void> save(@RequestBody List<CultoResource> cultos) {
 		
 		for ( CultoResource culto : cultos ){
 			
@@ -52,7 +52,7 @@ public class CultoRestController {
 			cultoRepository.save(cultoDb);
 		}	
 		
-		return null;
+		return ResponseEntity.ok().build();
 	}
 
 	private Set<Presenca> getListaPresenca(List<Long> ids, Culto cultoDb) {
